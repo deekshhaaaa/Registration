@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Registration.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Registration"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Registration">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Transaction"
+        ContentTemplate="{DataTemplate local:TrnsPage}"
+        Route="TrnsPage"/>
+    <ShellContent
+        Title="Add People"
+        ContentTemplate="{DataTemplate local:AddCstmrPage}"
+        Route="AddCstmrPage"/>
+    <ShellContent
+        Title="Transaction"
+        ContentTemplate="{DataTemplate local:IndiTrnsPage}"
+        Route="IndiTrnsPage"/>
+    <ShellContent
+        Title="Gave/Got section"
+        ContentTemplate="{DataTemplate local:BtnTrnsPage}"
+        Route="BtnTrnsPage"/>
+
+</Shell>

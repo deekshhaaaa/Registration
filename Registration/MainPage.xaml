@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Registration.MainPage">
+    
+    <ScrollView>
+        <FlexLayout Direction="Column">
+            <VerticalStackLayout Padding="10" Spacing="10" FlexLayout.Basis="Auto">
+                <Entry 
+            x:Name = "txtSearch"
+            Placeholder="Search"
+                    TextChanged="txtSearch_TextChanged"/>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout>
+                <ListView x:Name="lstCustomer" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="lstCustomer_ItemTrapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="5">
+                                    <Label Text="{Binding Name}" FontSize="17" FontAttributes="Bold"></Label>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="2" Text="{Binding Mobile}"/>
+                                        <Label Grid.Column="0" Text="{Binding Email}"/>
+                                        <Label Grid.Row="2" Text="{Binding Address}"/>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </FlexLayout>
+    </ScrollView>
+
+</ContentPage>
