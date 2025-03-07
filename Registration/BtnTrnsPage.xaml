@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Registration.BtnTrnsPage"
              Title="BtnTrnsPage">
-    <FlexLayout>
+    <FlexLayout Direction="Column" JustifyContent="SpaceEvenly">
         <Entry
             x:Name="txtAmt"
             Placeholder="Enter Amount"/>
         <Button
             x:Name="btnSave"
-            Text="Save"/>
-        <ListView 
+            Text="Save"
+            BackgroundColor="DarkSeaGreen"
+            TextColor="Beige"/>
+        <!--<ListView 
             x:Name="lstTransaction">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -26,6 +28,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
     </FlexLayout>
 </ContentPage>

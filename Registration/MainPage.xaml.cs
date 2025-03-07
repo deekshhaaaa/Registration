@@ -15,9 +15,10 @@ namespace Registration
         }
 
         #region Search Work
-        private void lstCustomer_ItemTrapped(object sender, ItemTappedEventArgs e)
+        private async void lstCustomer_ItemTrapped(object sender, ItemTappedEventArgs e)
         {
-
+            var masterId = (Customer)e.Item;
+            await Navigation.PushAsync(new IndiTrnsPage(masterId.Id));
         }
 
         private async void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -32,6 +33,7 @@ namespace Registration
             }
         }
         #endregion
+
     }
 
 }

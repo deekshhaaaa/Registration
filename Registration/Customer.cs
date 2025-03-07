@@ -21,10 +21,5 @@ namespace Registration
         
         [Column ("Address")]
         public string Address { get; set; }
-
-        [Column ("DOB")]
-        public DateTime DOB { get; set; }
-        [Column ("Activity")]
-        public bool Activity { get; set; }
     }
 }

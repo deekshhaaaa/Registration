@@ -11,10 +11,7 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-    <ShellContent
-        Title="Transaction"
-        ContentTemplate="{DataTemplate local:TrnsPage}"
-        Route="TrnsPage"/>
+    
     <ShellContent
         Title="Add People"
         ContentTemplate="{DataTemplate local:AddCstmrPage}"
