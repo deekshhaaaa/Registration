@@ -15,8 +15,20 @@
         <ListView 
             x:Name="lstTransaction"
             Grid.Row="1">
-            
-            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="Name Here"/>
+                            <Grid ColumnDefinitions="auto,auto,auto">
+                                <Label Text="Amount Here" Grid.Column="0" BackgroundColor="Red"/>
+                                <Label Text="Credit or Debit here" Grid.Column="1" BackgroundColor="Yellow"/>
+                                <Label Text="Date here" Grid.Column="2"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </ContentPage>
