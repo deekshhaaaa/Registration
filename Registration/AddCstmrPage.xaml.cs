@@ -4,7 +4,7 @@ namespace Registration;
 
 public partial class AddCstmrPage : ContentPage
 {
-    private readonly LocalDbService objLocalDb;
+    private LocalDbService objLocalDb;
     private int _ID;
     public AddCstmrPage(LocalDbService dbService)
     {

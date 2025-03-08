@@ -34,6 +34,16 @@ namespace Registration
         }
         #endregion
 
+        private async void btnAddPpl_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddCstmrPage(objLocalDb));
+            lstCustomer.ItemsSource = await objLocalDb.GetCustomers();
+        }
+
+        private async void RefreshView_Loaded(object sender, EventArgs e)
+        {
+            lstCustomer.ItemsSource = await objLocalDb.GetCustomers();
+        }
     }
 
 }

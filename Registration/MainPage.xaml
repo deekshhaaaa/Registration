@@ -2,16 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Registration.MainPage">
-    
-    <ScrollView>
-        <FlexLayout Direction="Column">
+
+    <Grid RowDefinitions="*,8*" RowSpacing="10" Padding="10">
+        
+            <Entry Grid.Row="0"
+x:Name = "txtSearch"
+Placeholder="Search"
+        TextChanged="txtSearch_TextChanged"/>
+
+        <RefreshView Grid.Row="1" Loaded="RefreshView_Loaded" RefreshColor="DarkSeaGreen">
+            <ScrollView>
+            <VerticalStackLayout>
+                <ListView x:Name="lstCustomer" HasUnevenRows="True" ItemTapped="lstCustomer_ItemTrapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="5">
+                                    <Label Text="{Binding Name}" FontSize="17" FontAttributes="Bold"></Label>
+                                    <FlexLayout Direction="Column" AlignContent="SpaceEvenly">
+                                        <Label Text="{Binding Mobile}"/>
+                                        <Label Text="{Binding Email}"/>
+                                        <Label Text="{Binding Address}"/>
+                                    </FlexLayout>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+        <Button Grid.Row="1"
+            x:Name="btnAddPpl"
+            Text="Add People"
+            BackgroundColor="IndianRed"
+            TextColor="Beige"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Clicked="btnAddPpl_Clicked"/>
+    </Grid>
+        <!--<FlexLayout Direction="Column" Padding="10">
             <VerticalStackLayout Padding="10" Spacing="10" FlexLayout.Basis="Auto">
                 <Entry 
             x:Name = "txtSearch"
             Placeholder="Search"
                     TextChanged="txtSearch_TextChanged"/>
             </VerticalStackLayout>
-            
+        <ScrollView>
             <VerticalStackLayout>
                 <ListView x:Name="lstCustomer" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="lstCustomer_ItemTrapped">
                     <ListView.ItemTemplate>
@@ -38,7 +75,11 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </VerticalStackLayout>
-        </FlexLayout>
-    </ScrollView>
-
+        </ScrollView>
+        <Button
+     x:Name="BtnAddPpl"
+     Text="Add People"
+     BackgroundColor="IndianRed"
+     TextColor="Beige"/>
+        </FlexLayout>-->
 </ContentPage>

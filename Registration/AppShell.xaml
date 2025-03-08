@@ -11,18 +11,10 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-    
+
     <ShellContent
         Title="Add People"
         ContentTemplate="{DataTemplate local:AddCstmrPage}"
         Route="AddCstmrPage"/>
-    <ShellContent
-        Title="Transaction"
-        ContentTemplate="{DataTemplate local:IndiTrnsPage}"
-        Route="IndiTrnsPage"/>
-    <ShellContent
-        Title="Gave/Got section"
-        ContentTemplate="{DataTemplate local:BtnTrnsPage}"
-        Route="BtnTrnsPage"/>
 
 </Shell>

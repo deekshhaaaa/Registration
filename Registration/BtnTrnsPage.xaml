@@ -7,11 +7,15 @@
         <Entry
             x:Name="txtAmt"
             Placeholder="Enter Amount"/>
+        <DatePicker
+            x:Name="dtTrns"
+            MinimumDate="01/01/1990"/>
         <Button
             x:Name="btnSave"
             Text="Save"
             BackgroundColor="DarkSeaGreen"
-            TextColor="Beige"/>
+            TextColor="Beige"
+            Clicked="btnSave_Clicked"/>
         <!--<ListView 
             x:Name="lstTransaction">
             <ListView.ItemTemplate>

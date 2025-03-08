@@ -62,6 +62,10 @@ namespace Registration
         {
             return await con.Table<Transaction>().ToListAsync();
         }
+        public async Task<List<Transaction>> getTransactionByMstrID(int M_ID)
+        {
+            return await con.Table<Transaction>().Where(x => x.MstrID == M_ID).ToListAsync();
+        }
         #endregion
     }
 }
