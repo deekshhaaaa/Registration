@@ -13,13 +13,20 @@ public partial class IndiTrnsPage : ContentPage
         masterId = _masterId;
         Customer objCustomer=new Customer();
         objlocaldb = new LocalDbService();
+        Transaction objTransaction = new Transaction();
         Task.Run(async() => objCustomer = await objlocaldb.getCustomerbyId(masterId));
+        Task.Run(async () => lstTrns.ItemsSource = await objlocaldb.getTransactionByMstrID(_masterId));
 
         if (objCustomer.Name == null)
         {
             Thread.Sleep(100);
         }
         this.Title = objCustomer.Name;
+
+        if (objTransaction.DbtCdt == "D")
+        {
+            lblAmt.BackgroundColor = Colors.LightPink;
+        }
     }
 
     private async void btnGot_Clicked(object sender, EventArgs e)

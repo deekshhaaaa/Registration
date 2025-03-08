@@ -11,7 +11,10 @@
                         <DataTemplate>
                             <ViewCell>
                                 <VerticalStackLayout Padding="10">
-                                    
+                                    <FlexLayout Direction="Row">
+                                        <Label Text="{Binding TrnsDt}"/>
+                                        <Label x:Name="lblAmt" Text="{Binding Amt}" FontSize="Medium" HorizontalOptions="End"/>
+                                    </FlexLayout>
                                 </VerticalStackLayout>
                             </ViewCell>
                         </DataTemplate>
