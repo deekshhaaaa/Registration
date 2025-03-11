@@ -64,7 +64,7 @@ namespace Registration
         #endregion
 
         private async void btnAddPpl_Clicked(object sender, EventArgs e)
-        {
+        {    
             await Navigation.PushAsync(new AddCstmrPage(objLocalDb));
         }
         //protected override void OnAppearing()

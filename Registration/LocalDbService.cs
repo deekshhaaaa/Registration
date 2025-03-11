@@ -43,6 +43,10 @@ namespace Registration
             strName = strName.ToUpper();
             return await con.Table<Customer>().Where(x => x.Name.ToUpper().StartsWith(strName)).ToListAsync();
         }
+        public async Task<Customer> getCustomerbyNameAndNumber(string _name, string _mobile)
+        {
+            return await con.Table<Customer>().Where(x => x.Name == _name && x.Mobile == _mobile).FirstOrDefaultAsync();
+        }
 
         public async Task<Customer> getCustomerbyId(int _id)
         {

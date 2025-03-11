@@ -7,7 +7,10 @@
         <Label Text="User Detail" Grid.Row="0" FontSize="Large"/>
         <Label Text="Dark Mode" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center"/>
         <Switch x:Name="swDarkMode" Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center"/>
-        <Label Text="Deletion" Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Button Text="Import Contact" BorderColor="IndianRed"
+                x:Name="btnImpCont" Clicked="btnImpCont_Clicked"
+                HeightRequest="50" BackgroundColor="Transparent"
+                TextColor="Black" BorderWidth="2"/>
         <Button Text="Delete all contacts" BorderColor="IndianRed"
                 x:Name="btnDelContacts" Clicked="btnDelContacts_Clicked"
                 HeightRequest="50" BackgroundColor="Transparent"
