@@ -35,6 +35,11 @@ namespace Registration
 
         public async Task<List<Customer>> GetCustomersByName(string strName)
         {
+            if (string.IsNullOrEmpty(strName))
+            {
+                return new List<Customer>();
+            }
+
             strName = strName.ToUpper();
             return await con.Table<Customer>().Where(x => x.Name.ToUpper().StartsWith(strName)).ToListAsync();
         }
@@ -42,6 +47,10 @@ namespace Registration
         public async Task<Customer> getCustomerbyId(int _id)
         {
             return await con.Table<Customer>().Where(x => x.Id == _id).FirstOrDefaultAsync();
+        }
+        public async Task DeleteAllCustomers()
+        {
+            await con.ExecuteAsync("delete from TbCustomer");
         }
         #endregion
 
@@ -65,6 +74,26 @@ namespace Registration
         public async Task<List<Transaction>> getTransactionByMstrID(int M_ID)
         {
             return await con.Table<Transaction>().Where(x => x.MstrID == M_ID).ToListAsync();
+        }
+        public async Task<Transaction> getTransactionbyID(int T_id)
+        {
+            return await con.Table<Transaction>().Where(x => x.TrnsID == T_id).FirstOrDefaultAsync();
+        }
+        public async Task<decimal> getBalanceAmtbyID(int MstrID)
+        {
+            return await con.ExecuteScalarAsync<decimal>("select sum(Amt) from TbTransaction where MstrID='" + MstrID + "'");
+        }
+        public async Task<decimal> getBalanceAmt()
+        {
+            return await con.ExecuteScalarAsync<decimal>("select sum(Amt) from TbTransaction");
+        }
+        public async Task DeleteTransaction(int TrnsID)
+        {
+            await con.ExecuteAsync("delete from TbTransaction where TrnsID='" + TrnsID + "'");
+        }
+        public async Task DeleteAllTrns()
+        {
+            await con.ExecuteAsync("delete from TbTransaction");
         }
         #endregion
     }

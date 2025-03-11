@@ -21,5 +21,7 @@ namespace Registration
         
         [Column ("Address")]
         public string Address { get; set; }
+
+        public decimal Amount { get; set; }
     }
 }

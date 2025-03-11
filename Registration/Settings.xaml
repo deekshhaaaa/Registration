@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Registration.Settings"
+             Title="Settings">
+    <VerticalStackLayout>
+        <Label Text="Hello hello!!!" />
+        <Button Text="Delete all contacts" BackgroundColor="IndianRed"
+                x:Name="btnDelContacts" Clicked="btnDelContacts_Clicked"
+                HeightRequest="20" WidthRequest="50"/>
+        <Button Text="Delete all transactions" BackgroundColor="IndianRed"
+                x:Name="btnDelTrns" Clicked="btnDelTrns_Clicked"
+                HeightRequest="20" WidthRequest="50"/>
+            <Button Text="Delete all data" BackgroundColor="IndianRed"
+                x:Name="btnDelData" Clicked="btnDelData_Clicked"
+                HeightRequest="20" WidthRequest="50"
+                IsVisible="True"/>
+    </VerticalStackLayout>
+</ContentPage>

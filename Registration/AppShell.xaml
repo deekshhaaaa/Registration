@@ -16,5 +16,9 @@
         Title="Add People"
         ContentTemplate="{DataTemplate local:AddCstmrPage}"
         Route="AddCstmrPage"/>
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate local:Settings}"
+        Route="Settings"/>
 
 </Shell>

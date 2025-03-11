@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Registration.SingleAmt"
+             Title="Entry Detail">
+ 
+    <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*,*" RowSpacing="20" ColumnSpacing="20" Padding="20">
+        <Label Text="Amount" Grid.Row="0" Grid.Column="0" 
+               FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="0.0" Grid.Row="0" Grid.Column="1" 
+               FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center"
+               x:Name="lblAmt"/>
+        <Label Text="You got" VerticalOptions="End" HorizontalOptions="Center"
+               FontSize="Medium" x:Name="lblDbtCdt" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="Date" Grid.Row="1" 
+               FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"
+               x:Name="lblDt"/>
+        <Label Text="Running Balance" Grid.Row="2" Grid.Column="0"
+               FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="0.0" VerticalOptions="Center" HorizontalOptions="Center"
+                FontSize="Medium" Grid.Row="2" Grid.Column="1"
+                x:Name="lblBal"/>
+        <Button Text="Edit" Grid.Row="3" Grid.Column="0"
+                BackgroundColor="CornflowerBlue" TextColor="White"
+                Clicked="btnEdit_Clicked" HeightRequest="50"/>
+        <Button Text="Delete" Grid.Row="3" Grid.Column="1"
+                BackgroundColor="Crimson" TextColor="White"
+                Clicked="btnDelete_Clicked" HeightRequest="50"/>
+    </Grid>
+</ContentPage>

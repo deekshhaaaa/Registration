@@ -6,14 +6,14 @@
     <Grid RowDefinitions="6*,*" ColumnDefinitions="*,*" RowSpacing="10" Padding="10" ColumnSpacing="10">
         <ScrollView Grid.Row="0">
             <VerticalStackLayout>
-                <ListView x:Name="lstTrns">
+                <ListView x:Name="lstTrns" ItemTapped="lstTrns_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <VerticalStackLayout Padding="10">
                                     <FlexLayout Direction="Row">
-                                        <Label Text="{Binding TrnsDt}"/>
-                                        <Label x:Name="lblAmt" Text="{Binding Amt}" FontSize="Medium" HorizontalOptions="End"/>
+                                        <Label Text="{Binding TrnsDt}" VerticalOptions="Center"/>
+                                        <Label x:Name="lblAmt" Text="{Binding Amt}" FontSize="Medium" VerticalOptions="Center" FlexLayout.AlignSelf="End"/>
                                     </FlexLayout>
                                 </VerticalStackLayout>
                             </ViewCell>
