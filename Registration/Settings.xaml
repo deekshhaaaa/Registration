@@ -21,7 +21,7 @@
             <Button Text="Delete all data" BorderColor="IndianRed"
                 x:Name="btnDelData" Clicked="btnDelData_Clicked"
                 HeightRequest="50" BackgroundColor="Transparent"
-                TextColor="Black" BorderWidth="2" WidthRequest="MaxValue"
+                TextColor="Black" BorderWidth="2" 
                 Grid.Row="5" HorizontalOptions="Start" VerticalOptions="Center"/>
     </Grid>
 </ContentPage>
