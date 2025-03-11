@@ -8,7 +8,7 @@ public partial class Settings : ContentPage
 
     public Settings()
 	{
-		//InitializeComponent();
+		InitializeComponent();
         objLocalDb = new LocalDbService();
     }
 
@@ -19,6 +19,11 @@ public partial class Settings : ContentPage
         {
             await objLocalDb.DeleteAllCustomers();
             await Navigation.PopAsync();
+            await DisplayAlert("Alert", "All contacts deleted", "OK");
+        }
+        else
+        {
+            await DisplayAlert("Alert", "Deletion cancelled", "OK");
         }
     }
 
@@ -29,6 +34,11 @@ public partial class Settings : ContentPage
         {
             await objLocalDb.DeleteAllTrns();
             await Navigation.PopAsync();
+            await DisplayAlert("Alert", "All transactions deleted", "OK");
+        }
+        else 
+        {
+            await DisplayAlert("Alert", "Deletion cancelled", "OK");
         }
     }
 
@@ -40,6 +50,11 @@ public partial class Settings : ContentPage
             await objLocalDb.DeleteAllCustomers();
             await objLocalDb.DeleteAllTrns();
             await Navigation.PopAsync();
+            await DisplayAlert("Alert", "All data deleted", "OK");
+        }
+        else
+        {
+            await DisplayAlert("Alert", "Deletion cancelled", "OK");
         }
     }
 }
