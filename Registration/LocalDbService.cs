@@ -12,6 +12,7 @@ namespace Registration
             con = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, DbName));
             con.CreateTableAsync<Customer>();
             con.CreateTableAsync<Transaction>();
+            con.CreateTableAsync<Category>();
         }
         #region Customer
         public async Task Create(Customer objCustomer)
@@ -100,5 +101,38 @@ namespace Registration
             await con.ExecuteAsync("delete from TbTransaction");
         }
         #endregion
+
+        #region Category
+        public async Task Create(Category objCat)
+        {
+            await con.InsertAsync(objCat);
+        }
+        public async Task Update(Category objCat)
+        {
+            await con.UpdateAsync(objCat);
+        }
+        public async Task Delete(Category objCat)
+        {
+            await con.DeleteAsync(objCat);
+        }
+        public async Task<List<Category>> GetCategories()
+        {
+            return await con.Table<Category>().ToListAsync();
+        }
+        public async Task<Category> getCategorybyID(int CatID)
+        {
+            return await con.Table<Category>().Where(x => x.CatID == CatID).FirstOrDefaultAsync();
+        }
+        //public async Task Insert(Category objCat)
+        //{
+        //    await con.InsertAsync({
+        //        CatName = "Investment",
+        //        CatName = "Sales",
+        //        CatName = "Food",
+        //        CatName = "Salary",
+        //        CatName = "Entertainment",
+        //        CatName = "Household"
+        //    });
     }
+        #endregion 
 }

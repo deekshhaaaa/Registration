@@ -10,6 +10,7 @@
         <DatePicker
             x:Name="dtTrns"
             MinimumDate="01/01/1990"/>
+        <Picker x:Name="pkrCategory"/>
         <Button
             x:Name="btnSave"
             Text="Save"

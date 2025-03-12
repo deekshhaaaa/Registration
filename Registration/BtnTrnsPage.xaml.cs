@@ -14,7 +14,6 @@ public partial class BtnTrnsPage : ContentPage
 		masterID = _masterID;
 		IsGave = _IsGave;
 		objdbService = new LocalDbService();
-		
 
 		if (IsGave == true)
 		{
