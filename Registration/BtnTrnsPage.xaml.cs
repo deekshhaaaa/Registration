@@ -15,7 +15,7 @@ public partial class BtnTrnsPage : ContentPage
 		IsGave = _IsGave;
 		objdbService = new LocalDbService();
 
-		if (IsGave == true)
+        if (IsGave == true)
 		{
 			btnSave.Text = "You Gave";
 			btnSave.BackgroundColor = Colors.IndianRed;
@@ -28,7 +28,26 @@ public partial class BtnTrnsPage : ContentPage
 			this.Title = "You Got";
 		}
 	}
-
+    private async void LoadCategories()
+    {
+		await objdbService.Create(new Category
+		{
+			CatName = "Investment",
+		});
+		await objdbService.Create(new Category
+		{
+			CatName = "Sales",
+		});
+		await objdbService.Create(new Category
+		{
+			CatName = "Food",
+		});
+		await objdbService.Create(new Category
+		{
+			CatName = "Salary",
+		});
+        pkrCategory.ItemsSource = await objdbService.GetCategories();
+    }
     private async void btnSave_Clicked(object sender, EventArgs e)
     {
 		string dbt_cdt;

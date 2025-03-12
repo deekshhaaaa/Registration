@@ -111,9 +111,9 @@ namespace Registration
         {
             await con.UpdateAsync(objCat);
         }
-        public async Task Delete(Category objCat)
+        public async Task DeletebyID(int CatID)
         {
-            await con.DeleteAsync(objCat);
+            await con.ExecuteAsync("delete from tbCategory where CatID = '"+CatID+"'");
         }
         public async Task<List<Category>> GetCategories()
         {
@@ -123,16 +123,13 @@ namespace Registration
         {
             return await con.Table<Category>().Where(x => x.CatID == CatID).FirstOrDefaultAsync();
         }
-        //public async Task Insert(Category objCat)
-        //{
-        //    await con.InsertAsync({
-        //        CatName = "Investment",
-        //        CatName = "Sales",
-        //        CatName = "Food",
-        //        CatName = "Salary",
-        //        CatName = "Entertainment",
-        //        CatName = "Household"
-        //    });
+
+        public async Task<Category> getCategoryByName(string catName)
+        {
+            return await con.Table<Category>().Where(x => x.CatName.ToUpper() == catName).FirstOrDefaultAsync();
+        }
+
+        
     }
         #endregion 
 }

@@ -20,5 +20,9 @@
         Title="Settings"
         ContentTemplate="{DataTemplate local:Settings}"
         Route="Settings"/>
+    <ShellContent
+        Title="Categories"
+        ContentTemplate="{DataTemplate local:CategoriesPg}"
+        Route="CategoriesPg"/>
 
 </Shell>
